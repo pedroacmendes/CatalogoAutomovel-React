@@ -1,0 +1,131 @@
+@import ../assets/styles/layout
+@import ../assets/styles/colors
+
+.header
+	background-color: $themeColor
+	color: $themeColorContrast
+	height: $menuHeight * 1.4
+	display: flex
+	align-items: center
+
+	> *
+		width: 100%
+		box-sizing: border-box
+		max-width: $maxWidth
+		margin-left: auto
+		margin-right: auto
+		padding-left: 160px
+		padding-right: 20px
+
+
+.title
+	text-decoration: none
+	color: #000
+
+.max-width
+	width: 100%
+	box-sizing: border-box
+	max-width: $maxWidth
+	margin-left: auto
+	margin-right: auto
+	padding-left: 20px
+	padding-right: 20px
+
+.aside-col
+	display: flex
+	margin-top: 20px
+	margin-bottom: 20px
+
+	> *:first-child
+		flex: 1 1 auto
+
+	> *:last-child
+		flex: 0 0 300px
+		margin-left: 20px
+		padding-left: 20px
+		border-left: 1px solid $borderColor
+
+.aside-title
+	margin-top: 0
+	margin-bottom: 0.2em
+
+.actions
+	margin-top: 20px
+	display: flex
+	justify-content: flex-end
+
+.aside-header
+	display: flex
+	align-items: center
+	height: 30px
+	padding: 0 10px
+
+	border: 1px solid rgba(0, 0, 0, 0.1)
+	border-radius: 6px 6px 0 0
+	text-transform: uppercase
+	font-weight: bold
+	font-size: small
+
+	~ *
+		padding: 10px
+
+.section
+	padding-top: 2em
+	padding-bottom: 2em
+
+	h2
+		margin: 0
+		text-align: center
+		text-transform: uppercase
+
+	+ .section
+		padding-top: 0
+
+.grid + .grid
+	margin-top: 10px
+
+@media screen and (max-width: $phoneWidth)
+	.header > *
+		padding-left: 20px
+		padding-right: 20px
+	.aside-col
+		flex-direction: column-reverse
+		> *:last-child
+			flex: 1 1 auto
+			margin-left: 0
+			margin-right: 0
+			padding-left: 0
+			padding-right: 0
+			border-left: none
+			border-bottom: 1px solid $borderColor
+			margin-bottom: 20px
+			padding-bottom: 20px
+
+.items-header
+	display: flex
+	align-items: center
+	height: 34px
+	background: darken($backgroundColor, 5%)
+	> *
+		flex: 1 1 50%
+		padding: 0 6px
+		&:first-child
+			flex: 1 1 30%
+
+.items
+	> *
+		display: flex
+		align-items: center
+		height: 34px
+		font-size: small
+		> *
+			flex: 1 1 50%
+			padding: 0 6px
+			&:first-child
+			flex: 1 1 30%
+
+.row-actions
+	flex: 0 0 100px
+	display: flex
+	justify-content: space-between
+	align-items: center

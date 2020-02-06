@@ -1,0 +1,47 @@
+@import ../../assets/styles/colors
+
+.root
+	position: relative
+
+.button
+	appearance: none
+	display: flex
+	align-items: center
+	justify-content: space-between
+	border: none
+	border-radius: 0
+	outline: none
+	height: 36px
+	cursor: pointer
+
+.options
+	position: absolute
+	left: 0
+	bottom: 100%
+	min-width: 100%
+
+	> *
+		display: flex
+		align-items: center
+		font-weight: normal
+		background: white
+		color: $textColor
+		padding-left: 10px
+		height: 32px
+		font-size: 0.9em
+		border-bottom: 1px solid $borderColor
+		cursor: pointer
+
+		> *
+			pointer-events: none
+
+		&:hover
+			background: #EEEEEE
+
+.icon
+	width: 16px
+	height: 16px
+	margin-left: 20px
+	svg
+		width: 16px
+		height: 16px

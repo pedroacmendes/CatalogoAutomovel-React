@@ -1,0 +1,153 @@
+@import ../../assets/styles/colors
+@import ../../assets/styles/layout
+
+$height: 50px
+
+.root
+	position: relative
+	width: 100%
+	height: $height
+
+.form
+	display: flex
+	align-items: center
+	height: 100%
+
+@keyframes appear
+	from
+		transform: translateY(100%)
+	to
+		transform: translateY(0)
+
+.advanced-form
+	position: absolute
+	left: 0
+	right: 0
+	bottom: calc(100% + 20px)
+	overflow: hidden
+
+	color: $textColor
+	z-index: 1
+
+	h4,
+	h5
+		margin-top: 0
+		margin-bottom: 0em
+
+	> *
+		padding: 20px
+		border: 1px solid lighten($backgroundColor, 20%)
+
+		box-sizing: border-box
+		background: $backgroundColor
+		
+		transform: translateY(100%)
+		animation: appear 300ms ease-out forwards
+
+		> * + *
+			margin-top: 10px
+
+.dropdown-container
+	flex: 0 0 80px
+	height: $height
+	border-right: 1px solid $borderColor
+.dropdown > button
+	height: $height
+	width: 100%
+	font-family: $actionFont
+	font-size: 0.9em
+	font-weight: 800
+
+.input-container
+	position: relative
+	flex: 1 1 50%
+	height: $height
+	background: white
+
+	input
+		appearance: none
+		position: absolute
+
+		top: 0
+		left: 0
+		width: 100%
+		bottom: 0
+
+		color: $textColorStrong
+		background: transparent
+		font-size: 16px
+		text-indent: 20px
+		
+		box-sizing: border-box
+		border: none
+		outline: none
+
+		&::placeholder
+			font-size: 0.8em
+			color: lighten($textColor, 10%)
+
+.find-button,
+.search-button
+	position: relative
+	appearance: none
+	height: $height
+	padding: 0 30px
+	background: $actionColor
+	color: $actionContrastColor
+	border: none
+	outline: none
+	box-sizing: border-box
+	text-transform: uppercase
+	overflow: hidden
+	font-size: 0.9em
+	font-family: $actionFont
+	font-weight: 800
+
+	cursor: pointer
+
+.search-button
+	height: 34px
+
+.find-button::before
+	content: ''
+	display: inline-block
+	position: absolute
+	left: 0
+	top: 50%
+	width: 6px
+	height: 6px
+	background: white
+	transform: translateX(-50%) translateY(-50%) rotateZ(45deg)
+
+.more-options
+	position: relative
+	appearance: none
+
+	height: $height
+	padding: 0 30px
+	margin-left: 10px
+
+	background: rgba(80, 80, 80, 0.4)
+	color: $actionContrastColor
+	border: none
+	outline: none
+	box-sizing: border-box
+	text-transform: uppercase
+	overflow: hidden
+	font-size: 0.9em
+	font-family: $actionFont
+	font-weight: 800
+
+	cursor: pointer
+
+.actions
+	display: flex
+	padding: 20px 0 10px
+	justify-content: flex-end
+
+@media screen and (max-width: $phoneWidth)
+	.more-options
+		display: none
+
+	.advanced-form
+		display: none

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,800&display=replace')
+
+@import ./assets/styles/colors
+@import ./assets/styles/layout
+
+body
+	background-color: $backgroundColor
+	margin: 0
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+code
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+
+h1, h2, h3, h4, h5, h6
+	font-family: $titlesFont
+
+h1
+	@media screen and (max-width: $maxWidth - 1)
+		font-size: calc(2.6em + #{$h1GrowFactor})
+	@media screen and (min-width: $maxWidth)
+		font-size: calc(2.6em + #{$h1GrowFactorMax})
+
+input[type="text"],
+input[type="password"]
+	appearance: none
+	height: 34px
+	margin: 0.2em 0
+	width: 100%
+	border: 1px solid rgba(0, 0, 0, 0.2)
+	box-sizing: border-box
+	background: white
+	text-indent: 10px
+	color: $textColorStrong
+	font-size: 1em
+	outline: none
+	&::placeholder
+		font-size: 0.8em
+		color: lighten($textColor, 10%)
+	&:focus
+		border-color: $actionColor
+	@media screen and (max-width: $phoneWidth)
+		font-size: 16px

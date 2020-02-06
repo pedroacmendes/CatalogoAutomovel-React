@@ -1,0 +1,80 @@
+@import ../../../assets/styles/colors
+@import ../../../assets/styles/layout
+
+
+.header
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 0 20px
+	height: 50px
+	color: white
+	background-color: $themeColor
+	box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.1)
+	z-index: 10
+
+	.link
+		margin-right: 40px
+		color: $textColorStrong
+		font-weight: 800
+		font-size: small
+		color: white
+
+.main
+	width: 100%
+	box-sizing: border-box
+	max-width: $maxWidth
+	margin-left: auto
+	margin-right: auto
+	padding-top: 40px
+	padding-left: 20px
+	padding-right: 20px
+
+.actions
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 10px
+	margin-bottom: 20px
+	background-color: $themeColor
+	color: white
+	border: 1px solid $borderColor
+	border-radius: 4px
+
+	h4
+		margin: 0
+
+.items-header
+	display: flex
+	align-items: center
+	height: 34px
+	background-color:#252525
+	color: white
+	//background: darken($backgroundColor, 5%)
+	> *
+		flex: 1 1 50%
+		padding: 0 6px
+		&:first-child
+				flex: 1 1 30%
+
+.items
+	> *
+		display: flex
+		align-items: center
+		height: 34px
+		font-size: small
+
+		> *
+			flex: 1 1 50%
+			padding: 0 6px
+			&:first-child
+				flex: 1 1 30%
+
+		&:nth-child(even)
+			background-color: lighten($backgroundColor, 5%)
+			
+.row-actions
+	flex: 0 0 100px
+	display: flex
+	justify-content: space-between
+	align-items: center
